@@ -11,31 +11,28 @@ db=SQLAlchemy(app)
 
 
 class File(db.Model):
-#    __tablename__='File'
+    __tablename__='File'
     id=db.Column(db.Integer,primary_key=True,unique=True)
     title=db.Column(db.String(80))
     created_time=db.Column(db.DateTime)
     category_id=db.Column(db.Integer,db.ForeignKey('Category.id'))
     category=db.relationship('Category',uselist=False)
-#    category_id=db.Column(db.Integer)
     content=db.Column(db.Text)
     def __init__(self,title,created_time,category,content):
         self.title=title
         self.created_time=created_time
         self.content=content
-#        self.id=idnum
         self.category=category
 
 class Category(db.Model):
-#    __tablename__='Category'
+    __tablename__='Category'
     id=db.Column(db.Integer,unique=True,primary_key=True)
     name=db.Column(db.String(80))
     files=db.relationship('File')
     def __init__(self,name):
         self.name=name
-#        self.id=idnum
 
-#db.create_all()
+db.create_all()
 java=Category('Java')
 python=Category('Python')
 file1=File('Hello Java',datetime.utcnow(),java,'File Content - Java is cool!')
