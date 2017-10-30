@@ -1,0 +1,39 @@
+        p.list-top a{
+            color: #4094C7;
+            text-decoration: none;
+        }
+        p.list-top a:hover{
+            color: blue;
+        }
+        h4.title{
+            text-indent: 10px;
+            padding: 5px 0;
+        }
+        h4.title a{
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 1.5;
+            color: #555555;
+            text-decoration: none;
+            line-height: 30px;
+
+        }
+        h4.title a:hover{
+            color: black;
+        }
+        .list-footer{
+            line-height: 10px;
+            color: #B5B5B5;
+        }
+        .list-footer span:hover{
+           color: #3D411C;
+        }
+        .list-footer a{
+            color: #B5B5B5;
+            font-size: 10px;
+        }
+        .list-footer a:hover{
+            color: #3D411C;
+            text-decoration: none;
+        }

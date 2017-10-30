@@ -1,0 +1,88 @@
+<extend name="Public:base" />
+<block name='title'><title>关于</title></block>
+<block name="main">
+  <div class="col-xs-12 col-sm-12"  style="min-height: 540px;">
+    <div class="panel panel-primary">
+       <div class="panel-heading"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;关于/日志</div>
+        <div class="panel-body">
+          <blockquote>
+            <p>本页面作为日常开发日志记录</p>
+          </blockquote>
+          <p>
+            <dl class="dl-horizontal">
+
+              <dt>2016-08-20</dt>
+              <dd class="text-info">完成文章管理系统前台页面设计与实现</dd>
+
+              <dt>2016-08-20</dt>
+              <dd class="text-info">完成文章管理系统前台页面设计与实现</dd>
+
+              <dt>2016-08-20</dt>
+              <dd class="text-info">完成文章管理系统前台页面设计与实现</dd>
+
+              <dt>2016-08-20</dt>
+              <dd class="text-info">完成文章管理系统前台页面设计与实现</dd>
+
+              <dt>2016-08-20</dt>
+              <dd class="text-info">完成文章管理系统前台页面设计与实现</dd>
+
+            </dl>
+          </p>
+          <hr>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          修改日志 <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" style="max-height: 250px;overflow:auto;">
+          <li><a href="#">2016-08-20</a></li>
+          <li><a href="#">2016-08-20</a></li>
+          <li><a href="#">2016-08-20</a></li>
+          <li><a href="#">2016-08-20</a></li>
+          <li><a href="#">2016-08-20</a></li>
+          <li><a href="#">2016-08-20</a></li>
+        </ul>
+      </div>
+      <button type="button" style="float: right;"  data-toggle="modal" data-target="#log" class="btn btn-primary">添加日志</button>
+
+        </div>
+    </div>
+  </div><!--/.col-xs-12.col-sm-9-->
+
+  <div class="modal fade" id="log" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="exampleModalLabel">添加日志</h4>
+        </div>
+        <form method="post" action="about">
+          <div class="modal-body">
+              <div class="form-group">
+                <label for="message-text" class="control-label">描述:</label>
+                <textarea class="form-control" id="message-text" style="resize: none;" rows="10" name="info" placeholder="添加日志信息" required=""></textarea>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="submit" class="btn btn-primary">提交</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</block>
+<block name="sidebar">
+</block>
+<block name='js'>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#index').removeClass('active');
+        $('#about').addClass('active');
+      });
+    </script>
+</block>
+
+
+

@@ -1,0 +1,40 @@
+<extend name="Public:base" />
+<block name='title'><title>关于</title></block>
+<block name="main">
+  <div class="col-xs-12 col-sm-12">
+    <div class="panel panel-primary">
+       <div class="panel-heading"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;关于/日志:修改</div>
+        <div class="panel-body">
+          <blockquote>
+            <p>日志日期：2016-08-20</p>
+          </blockquote>
+          <form method="post" action="">
+              <div class="modal-body">
+                <input type="hidden" name="time" value="2016-08-20">
+                <div class="form-group">
+                  <label for="message-text" class="control-label">日志详情:</label>
+                  <textarea class="form-control" id="message-text" style="resize: none;" rows="7" name="loginfo" placeholder="添加日志信息" required="">这里是需要修改的日志信息</textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="javascript:history.back()" style="float: left;">返回</button>
+                <button type="submit" class="btn btn-primary">确认修改</button>
+              </div>
+          </form>
+        </div>
+    </div>
+  </div><!--/.col-xs-12.col-sm-9-->
+</block>
+<block name="sidebar">
+</block>
+<block name='js'>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#index').removeClass('active');
+      $('#about').addClass('active');
+    });
+  </script>
+</block>
+
+
+

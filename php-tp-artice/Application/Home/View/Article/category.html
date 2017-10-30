@@ -1,0 +1,84 @@
+<extend name="Public:base" />
+<block name='title'><title>主页</title></block>
+<block name='css'>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/category.css">
+</block>
+<block name="main">
+<ol class="breadcrumb">
+  <li><a href="/">主页</a></li>
+  <li><a href="__CONTROLLER__/category">全部</a></li>
+  <li><a href="#">Article</a></li>
+</ol>
+  <div class="col-xs-12 col-sm-9">
+    <p class="pull-right visible-xs">
+      <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">侧栏</button>
+    </p>
+  <div class="panel panel-info">
+    <div class="panel-heading">{$tag|default='全部'}</div>
+    <div class="panel-body">
+        <ul class="media-list">
+
+          <li class="media">
+            <div class="media-body">
+              <p class="list-top" style="font-size: 10px;line-height: 20px;">
+                      <a href="#" >Admin</a>
+                      <em>·</em>
+                      <span class="time" publish="2016-08-20"></span>
+              </p>
+              <h4 class="title">
+                  <a href="#">欢迎来到实验楼</a>
+              </h4>
+             <div class="list-footer">
+                 <a href="#"> 阅读 100</a>
+                 <span><em>·</em>{$list.tagname}</span>
+                 <span><em>·</em> <span class="glyphicon glyphicon-heart like" aria-hidden="true" value='' id="like"></span></span>
+              </div>
+            </div>
+            <div class="media-right">
+              <a href="#">
+
+                  <img class="media-object" src="__PUBLIC__/home/imgs/article.png" alt="未能正确加载" style="width: 100px;height: 100px;">
+
+              </a>
+            </div>
+          </li>
+          <hr>
+
+        </ul>
+    </div>
+  </div>
+  </div><!--/.col-xs-12.col-sm-9-->
+</block>
+<block name="pager">
+  <nav class="col-md-6 col-md-offset-3">
+  
+  </nav>
+</block>
+<block name='js'>
+  <script>
+    $(document).ready(function() {
+      var now = new Date();
+      var time = $('.time');
+      time.each(function() {
+        var pub = new Date($(this).attr('publish'));
+        var td = Math.round((now-pub)/(24*3600*1000));
+        if (td == 0) {
+          $(this).text('今天');
+        } else {
+           $(this).text(td+'天以前');
+        }
+      });
+     $('span.like').each(function() {
+      var aid = $(this).attr('value');
+      $.post('__CONTROLLER__/like', {aid:aid,check:'c'}, function(data, textStatus, xhr) {
+        if (textStatus == 'success') {
+          if (data.cur == '1') {
+            $('#like'+aid).css('color','red');
+          }
+          $('#like'+aid).after(':'+data.sum);
+        }
+      });
+     })
+    });
+  </script>
+</block>
